@@ -1,0 +1,133 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* purchase_orders_expired
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0e-20170815\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-30 23:23+0000\n"
+"PO-Revision-Date: 2017-10-30 23:23+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_orders_expired
+#: model:mail.template,body_html:purchase_orders_expired.email_template_edi_purchase_cancelled
+msgid "\n"
+"<div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Hello ${object.partner_id.name},</p>\n"
+"\n"
+"    <p>We have decided to cancel the purchase order for non-compliance with delivery times.: </p>\n"
+"\n"
+"    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"       &nbsp;&nbsp;<strong>REFERENCES</strong><br />\n"
+"       &nbsp;&nbsp;Order number: <strong>${object.name}</strong><br />\n"
+"       &nbsp;&nbsp;Order total: <strong>${object.amount_total} ${object.currency_id.name}</strong><br />\n"
+"       &nbsp;&nbsp;Order date: ${object.date_order}<br />\n"
+"       % if object.origin:\n"
+"       &nbsp;&nbsp;Order reference: ${object.origin}<br />\n"
+"       % endif\n"
+"       % if object.partner_ref:\n"
+"       &nbsp;&nbsp;Your reference: ${object.partner_ref}<br />\n"
+"       % endif\n"
+"       % if object.create_uid:\n"
+"       &nbsp;&nbsp;Your contact: <a href=\"mailto:${object.create_uid.email or ''}?subject=Order%20${object.name}\">${object.create_uid.name}</a>\n"
+"       % endif\n"
+"    </p>\n"
+"\n"
+"    <br/>\n"
+"    <p>If you have any question, do not hesitate to contact us.</p>\n"
+"    <p>Thank you!</p>\n"
+"    <br/>\n"
+"    <br/>\n"
+"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"            <strong style=\"text-transform:uppercase;\">${object.company_id.name}</strong></h3>\n"
+"    </div>\n"
+"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"            ${object.company_id.partner_id.sudo().with_context(show_address=True, html_format=True).name_get()[0][1] | safe}\n"
+"        </span>\n"
+"        % if object.company_id.phone:\n"
+"            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                Phone:&nbsp; ${object.company_id.phone}\n"
+"            </div>\n"
+"        % endif\n"
+"        % if object.company_id.website:\n"
+"            <div>\n"
+"                Web :&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.website}</a>\n"
+"            </div>\n"
+"        %endif\n"
+"        <p></p>\n"
+"    </div>\n"
+"</div>\n"
+"            "
+msgstr ""
+
+#. module: purchase_orders_expired
+#: model:mail.template,subject:purchase_orders_expired.email_template_edi_purchase_cancelled
+msgid "${object.company_id.name} Order (Ref ${object.name or 'n/a' })"
+msgstr ""
+
+#. module: purchase_orders_expired
+#: model:ir.ui.view,arch_db:purchase_orders_expired.po_expiration_limit_form
+msgid "Cancel"
+msgstr ""
+
+#. module: purchase_orders_expired
+#: model:ir.model,name:purchase_orders_expired.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: purchase_orders_expired
+#: code:addons/purchase_orders_expired/models/purchase.py:93
+#, python-format
+msgid "Compose Email"
+msgstr ""
+
+#. module: purchase_orders_expired
+#: code:addons/purchase_orders_expired/models/purchase.py:24
+#, python-format
+msgid "Expired"
+msgstr ""
+
+#. module: purchase_orders_expired
+#: model:ir.ui.view,arch_db:purchase_orders_expired.po_expiration_limit_form
+msgid "If a purchase order is done, you cannot modify it manually anymore. You will not be able to receive invoices anymore for this purchase order."
+msgstr ""
+
+#. module: purchase_orders_expired
+#: model:ir.model.fields,field_description:purchase_orders_expired.field_res_company_purchase_order_expiration_limit
+msgid "Limit of days to the expiration of purchase orders"
+msgstr ""
+
+#. module: purchase_orders_expired
+#: model:mail.template,report_name:purchase_orders_expired.email_template_edi_purchase_cancelled
+msgid "PO_${(object.name or '').replace('/','_')}"
+msgstr ""
+
+#. module: purchase_orders_expired
+#: model:ir.model,name:purchase_orders_expired.model_purchase_order
+msgid "Purchase Order"
+msgstr ""
+
+#. module: purchase_orders_expired
+#: model:ir.ui.view,arch_db:purchase_orders_expired.res_company_po_expiration_limit
+msgid "Purchases"
+msgstr ""
+
+#. module: purchase_orders_expired
+#: model:ir.ui.view,arch_db:purchase_orders_expired.po_expiration_limit_form
+msgid "Send Order by Email"
+msgstr ""
+
+#. module: purchase_orders_expired
+#: model:ir.ui.view,arch_db:purchase_orders_expired.po_expiration_limit_form
+msgid "Set to Done"
+msgstr ""
+

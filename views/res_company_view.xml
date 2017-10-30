@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+        <record id="res_company_po_expiration_limit" model="ir.ui.view">
+            <field name="name">res.company.po.expiration.limit</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+
+              <page name='configuration' position='inside'>
+                <group>
+                    <group name="purchases_conf" string="Purchases">
+                        <field name="purchase_order_expiration_limit"/>
+                    </group>
+                </group>
+              </page>
+
+            </field>
+        </record>
+
+    </data>
+</openerp>
