@@ -12,6 +12,7 @@
     'depends': ['purchase', 'purchase_order_date_receipt_supplier'],
     'data': [
         'views/res_company_view.xml',
+        'views/purchase_view.xml',
     ],
     'installable': True,
     'auto_install': False
