@@ -13,6 +13,7 @@
     'data': [
         'views/res_company_view.xml',
         'views/purchase_view.xml',
+        'data/ir_cron.xml',
     ],
     'installable': True,
     'auto_install': False
