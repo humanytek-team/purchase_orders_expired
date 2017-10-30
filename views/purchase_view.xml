@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
 
@@ -8,16 +8,21 @@
             <field name="inherit_id" ref="purchase.purchase_order_form"/>
             <field name="arch" type="xml">
 
-              <button name="button_cancel" position="attributes">
-                <attribute name="states">
-                  draft,to approve,sent,purchase,expired
-                </attribute>
-              </button>
+              <xpath expr="//button[@name='button_cancel']" position="replace">
+                <button
+                  name="button_cancel"
+                  states="draft,to approve,sent,purchase,expired"
+                  string="Cancel"
+                  type="object" />
+              </xpath>
 
-              <button name="button_done" position="attributes">
-                <attribute name="states">
-                  purchase,expired
-                </attribute>
+              <button name="button_done" position="replace">
+                <button
+                  name="button_done"
+                  type="object"
+                  string="Set to Done"
+                  states="purchase,expired"
+                  help="If a purchase order is done, you cannot modify it manually anymore. You will not be able to receive invoices anymore for this purchase order."/>
               </button>
 
             </field>
