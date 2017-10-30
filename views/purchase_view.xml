@@ -25,6 +25,15 @@
                   help="If a purchase order is done, you cannot modify it manually anymore. You will not be able to receive invoices anymore for this purchase order."/>
               </button>
 
+              <xpath expr="//header" position="inside">
+                <button
+                  name="action_rfq_send"
+                  states="cancel"
+                  string="Send Order by Email"
+                  type="object"
+                  context="{'send_cancelled':True}"/>
+              </xpath>
+
             </field>
         </record>
 
