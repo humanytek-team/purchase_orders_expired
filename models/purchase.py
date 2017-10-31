@@ -55,8 +55,25 @@ class PurchaseOrder(models.Model):
                     ])
 
                 if orders_expired:
+
+                    for po in orders_expired:
+                        
+                        if po.invoice_ids:
+                            for inv in po.invoice_ids:
+                                if inv.state in ['open', 'paid']:
+                                    orders_expired -= po
+
+                        if po.picking_ids:
+                            for picking in po.picking_ids:
+                                if picking.state == 'done':
+                                    orders_expired -= po
+
+                if orders_expired:
                     orders_expired.write({'state': 'expired'})
-                    _logger.info('Purchase orders expired were found')
+                    _logger.info(
+                        'Purchase orders expired were found for company %s',
+                        company.name)
+
                     for po in orders_expired:
                         _logger.info('Purchase expired %s', po.name)
 
