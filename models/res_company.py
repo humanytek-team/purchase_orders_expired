@@ -11,3 +11,6 @@ class Company(models.Model):
     purchase_order_expiration_limit = fields.Integer(
         string=u'Limit of days to the expiration of purchase orders',
         default=30)
+    fine_purchase_order_expired = fields.Float(
+        string=u'Percentage of fine over purchase orders expired',
+        default=5)

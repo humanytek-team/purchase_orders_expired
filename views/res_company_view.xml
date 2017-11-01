@@ -12,6 +12,7 @@
                 <group>
                     <group name="purchases_conf" string="Purchases">
                         <field name="purchase_order_expiration_limit"/>
+                        <field name="fine_purchase_order_expired"/>
                     </group>
                 </group>
               </page>
