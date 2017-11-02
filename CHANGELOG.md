@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### added
+- Applies automatically refund invoices of penalty for suppliers whose purchase orders are overdue.
 
 ## [9.0.1.0.1] - 2017-10-31
 ### changed

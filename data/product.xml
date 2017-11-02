@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+
+      <record id="product_fine_purchase_order_expired" model="product.product">
+          <field name="name">Fine over purchase orders expired</field>
+          <field name="list_price">0.0</field>
+          <field name="standard_price">0.0</field>
+          <field name="type">consu</field>
+          <field name="uom_id" ref="product.product_uom_unit"/>
+          <field name="uom_po_id" ref="product.product_uom_unit"/>
+          <field name="description_purchase">
+            Percentage of fine over purchase orders expired
+          </field>
+      </record>
+
+    </data>
+</odoo>

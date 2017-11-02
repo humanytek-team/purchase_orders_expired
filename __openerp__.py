@@ -9,12 +9,17 @@
     'author': 'Humanytek',
     'website': "http://www.humanytek.com",
     'license': 'AGPL-3',
-    'depends': ['purchase', 'purchase_order_date_receipt_supplier'],
+    'depends': [
+        'account',
+        'purchase',
+        'purchase_order_date_receipt_supplier',
+        ],
     'data': [
-        'views/res_company_view.xml',
-        'views/purchase_view.xml',
         'data/ir_cron.xml',
         'data/mail_template_data.xml',
+        'data/product.xml',
+        'views/res_company_view.xml',
+        'views/purchase_view.xml',
     ],
     'installable': True,
     'auto_install': False
