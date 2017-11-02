@@ -34,6 +34,16 @@
                   context="{'send_cancelled':True}"/>
               </xpath>
 
+              <div name="button_box" position="attributes">
+                <attribute name="attrs">{'invisible': [('state', 'not in', ('purchase', 'done', 'cancel', 'expired'))]}</attribute>
+              </div>
+
+              <button name="action_view_picking" position="attributes">
+                <attribute name="attrs">
+                  {'invisible': ['|', ('state','not in', ('purchase','done', 'expired')), ('picking_count', '=', 0)]}
+                </attribute>
+              </button>
+
             </field>
         </record>
 
