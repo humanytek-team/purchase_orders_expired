@@ -47,5 +47,21 @@
             </field>
         </record>
 
+        <record id="view_purchase_order_filter_expired" model="ir.ui.view">
+            <field name="name">purchase.order.filter.expired</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.view_purchase_order_filter"/>
+            <field name="arch" type="xml">
+
+              <filter name="approved" position="after">
+                <filter
+                  name="expired"
+                  string="Purchases Expired"
+                  domain="[('state','=','expired')]"/>
+              </filter>
+
+            </field>
+        </record>
+
     </data>
 </openerp>

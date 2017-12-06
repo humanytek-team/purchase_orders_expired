@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0e-20170815\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-01 14:58+0000\n"
-"PO-Revision-Date: 2017-11-01 10:59-0400\n"
+"POT-Creation-Date: 2017-12-06 08:52+0000\n"
+"PO-Revision-Date: 2017-12-06 04:56-0400\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,18 @@ msgstr ""
 "Plural-Forms: \n"
 "Language: es_MX\n"
 "X-Generator: Poedit 1.8.11\n"
+
+#. module: purchase_orders_expired
+#: model:product.product,description_purchase:purchase_orders_expired.product_fine_purchase_order_expired
+#: model:product.template,description_purchase:purchase_orders_expired.product_fine_purchase_order_expired_product_template
+msgid ""
+"\n"
+"            Percentage of fine over purchase orders expired\n"
+"          "
+msgstr ""
+"\n"
+"            Percentage of fine over purchase orders expired\n"
+"          "
 
 #. module: purchase_orders_expired
 #: model:mail.template,body_html:purchase_orders_expired.email_template_edi_purchase_cancelled
@@ -150,9 +162,26 @@ msgid "Expired"
 msgstr "Vencido"
 
 #. module: purchase_orders_expired
+#: code:addons/purchase_orders_expired/models/account_invoice.py:62
+#, python-format
+msgid "Fine over invoice of purchase order expired %s"
+msgstr "Multa sobre factura de orden de compra vencida %s"
+
+#. module: purchase_orders_expired
+#: model:product.product,name:purchase_orders_expired.product_fine_purchase_order_expired
+#: model:product.template,name:purchase_orders_expired.product_fine_purchase_order_expired_product_template
+msgid "Fine over purchase orders expired"
+msgstr "Multa sobre ordenes de compra vencidas"
+
+#. module: purchase_orders_expired
 #: model:ir.ui.view,arch_db:purchase_orders_expired.po_expiration_limit_form
 msgid "If a purchase order is done, you cannot modify it manually anymore. You will not be able to receive invoices anymore for this purchase order."
 msgstr "Si un pedido de compra está realizada, no se puede modificar de forma manual más. Usted no será capaz de recibir las facturas más por esta orden de compra."
+
+#. module: purchase_orders_expired
+#: model:ir.model,name:purchase_orders_expired.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
 
 #. module: purchase_orders_expired
 #: model:ir.model.fields,field_description:purchase_orders_expired.field_res_company_purchase_order_expiration_limit
@@ -180,6 +209,11 @@ msgid "Purchases"
 msgstr "Compras"
 
 #. module: purchase_orders_expired
+#: model:ir.ui.view,arch_db:purchase_orders_expired.view_purchase_order_filter_expired
+msgid "Purchases Expired"
+msgstr "Compras Vencidas"
+
+#. module: purchase_orders_expired
 #: model:ir.ui.view,arch_db:purchase_orders_expired.po_expiration_limit_form
 msgid "Send Order by Email"
 msgstr "Send Order by Email"
@@ -188,3 +222,9 @@ msgstr "Send Order by Email"
 #: model:ir.ui.view,arch_db:purchase_orders_expired.po_expiration_limit_form
 msgid "Set to Done"
 msgstr "Cambiar a finalizado"
+
+#. module: purchase_orders_expired
+#: code:addons/purchase_orders_expired/models/account_invoice.py:81
+#, python-format
+msgid "The product \"Fine over purchase orders expired\" has been deleted."
+msgstr "El producto \"Multa sobre ordenes de compra vencidas\" ha sido borrado."
