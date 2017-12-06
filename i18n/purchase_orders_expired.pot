@@ -6,14 +6,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0e-20170815\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-01 14:58+0000\n"
-"PO-Revision-Date: 2017-11-01 14:58+0000\n"
+"POT-Creation-Date: 2017-12-06 08:51+0000\n"
+"PO-Revision-Date: 2017-12-06 08:51+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: purchase_orders_expired
+#: model:product.product,description_purchase:purchase_orders_expired.product_fine_purchase_order_expired
+#: model:product.template,description_purchase:purchase_orders_expired.product_fine_purchase_order_expired_product_template
+msgid "\n"
+"            Percentage of fine over purchase orders expired\n"
+"          "
+msgstr ""
 
 #. module: purchase_orders_expired
 #: model:mail.template,body_html:purchase_orders_expired.email_template_edi_purchase_cancelled
@@ -97,8 +105,25 @@ msgid "Expired"
 msgstr ""
 
 #. module: purchase_orders_expired
+#: code:addons/purchase_orders_expired/models/account_invoice.py:62
+#, python-format
+msgid "Fine over invoice of purchase order expired %s"
+msgstr ""
+
+#. module: purchase_orders_expired
+#: model:product.product,name:purchase_orders_expired.product_fine_purchase_order_expired
+#: model:product.template,name:purchase_orders_expired.product_fine_purchase_order_expired_product_template
+msgid "Fine over purchase orders expired"
+msgstr ""
+
+#. module: purchase_orders_expired
 #: model:ir.ui.view,arch_db:purchase_orders_expired.po_expiration_limit_form
 msgid "If a purchase order is done, you cannot modify it manually anymore. You will not be able to receive invoices anymore for this purchase order."
+msgstr ""
+
+#. module: purchase_orders_expired
+#: model:ir.model,name:purchase_orders_expired.model_account_invoice
+msgid "Invoice"
 msgstr ""
 
 #. module: purchase_orders_expired
@@ -127,6 +152,11 @@ msgid "Purchases"
 msgstr ""
 
 #. module: purchase_orders_expired
+#: model:ir.ui.view,arch_db:purchase_orders_expired.view_purchase_order_filter_expired
+msgid "Purchases Expired"
+msgstr ""
+
+#. module: purchase_orders_expired
 #: model:ir.ui.view,arch_db:purchase_orders_expired.po_expiration_limit_form
 msgid "Send Order by Email"
 msgstr ""
@@ -134,5 +164,11 @@ msgstr ""
 #. module: purchase_orders_expired
 #: model:ir.ui.view,arch_db:purchase_orders_expired.po_expiration_limit_form
 msgid "Set to Done"
+msgstr ""
+
+#. module: purchase_orders_expired
+#: code:addons/purchase_orders_expired/models/account_invoice.py:81
+#, python-format
+msgid "The product \"Fine over purchase orders expired\" has been deleted."
 msgstr ""
 
