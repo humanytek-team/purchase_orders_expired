@@ -33,10 +33,6 @@ class AccountInvoice(models.Model):
                             for line in po_invoice_lines:
                                 po_invoice_total += line.price_subtotal
 
-                                for tax in line.invoice_line_tax_ids:
-                                    po_invoice_total += (
-                                        line.price_subtotal * tax.amount) / 100
-
                             if po_invoice_total > 0:
 
                                 percentage_fine = \
@@ -60,7 +56,15 @@ class AccountInvoice(models.Model):
                                             'company_id': invoice.company_id.id,
                                             'user_id': invoice.user_id.id,
                                             'name': _('Fine over invoice of purchase order expired %s' % po.name)
-                                            })
+                                        })
+
+                                        if fine_product.supplier_taxes_id:
+                                            supplier_taxes_id = [
+                                                (4, tax.id)
+                                                for tax in
+                                                fine_product.supplier_taxes_id]
+                                        else:
+                                            supplier_taxes_id = False
 
                                         AccountInvoiceLine.create({
                                             'invoice_id': in_refund_invoice.id,
@@ -69,12 +73,13 @@ class AccountInvoice(models.Model):
                                             'quantity': 1,
                                             'price_unit': fine_purchase_order_expired,
                                             'partner_id': in_refund_invoice.partner_id.id,
-                                            'account_id': \
-                                                fine_product.property_account_expense_id.id,
-                                            })
+                                            'account_id': fine_product.property_account_expense_id.id,
+                                            'invoice_line_tax_ids': supplier_taxes_id,
+                                        })
 
+                                        in_refund_invoice.compute_taxes()
                                         in_refund_invoice.signal_workflow(
-                                        'invoice_open')
+                                            'invoice_open')
 
                                     else:
                                         raise ValidationError(
