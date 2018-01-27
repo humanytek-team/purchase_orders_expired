@@ -4,7 +4,7 @@
 
 {
     'name': 'Manager of Purchase Orders Expired',
-    'version': '9.0.1.2.0',
+    'version': '9.0.1.2.1',
     'category': 'Purchases',
     'author': 'Humanytek',
     'website': "http://www.humanytek.com",
@@ -13,7 +13,7 @@
         'account',
         'purchase',
         'purchase_order_date_receipt_supplier',
-        ],
+    ],
     'data': [
         'data/ir_cron.xml',
         'data/mail_template_data.xml',
