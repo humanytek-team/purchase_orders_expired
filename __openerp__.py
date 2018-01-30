@@ -4,7 +4,7 @@
 
 {
     'name': 'Manager of Purchase Orders Expired',
-    'version': '9.0.1.2.1',
+    'version': '9.0.1.2.2',
     'category': 'Purchases',
     'author': 'Humanytek',
     'website': "http://www.humanytek.com",
