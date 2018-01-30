@@ -2,8 +2,12 @@
 # Copyright 2017 Humanytek - Manuel Marquez <manuel@humanytek.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
+import logging
+
 from openerp import api, models, _
 from openerp.exceptions import ValidationError
+
+_logger = logging.getLogger(__name__)
 
 
 class AccountInvoice(models.Model):
@@ -57,6 +61,18 @@ class AccountInvoice(models.Model):
                                             'user_id': invoice.user_id.id,
                                             'name': _('Fine over invoice of purchase order expired %s' % po.name)
                                         })
+
+                                        # The next lines of try applies only
+                                        # for MX
+                                        try:
+                                            in_refund_invoice.write({
+                                                'validate_attachment': True,
+                                                'validate_attachment2': True,
+                                            })
+                                        except Exception:
+                                            _logger.debug(
+                                                'MX l10n modules are not installed')
+                                            pass
 
                                         if fine_product.supplier_taxes_id:
                                             supplier_taxes_id = [
