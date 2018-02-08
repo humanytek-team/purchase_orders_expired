@@ -82,6 +82,10 @@ class AccountInvoice(models.Model):
                                         else:
                                             supplier_taxes_id = False
 
+                                        if not fine_product.property_account_expense_id:
+                                            raise ValidationError(
+                                                _('Expense account is not configured for the product'))
+
                                         AccountInvoiceLine.create({
                                             'invoice_id': in_refund_invoice.id,
                                             'product_id': fine_product.id,
