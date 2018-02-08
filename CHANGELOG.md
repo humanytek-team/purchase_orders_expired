@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [9.0.1.2.3] - 2018-02-08
+### changed
+- Validate expense account in product.
+
 ## [9.0.1.2.2] - 2018-01-29
 ### changed
 - Disable validation of XML in refund invoice, only valid for l10n_MX
